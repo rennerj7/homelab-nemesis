@@ -117,6 +117,11 @@ The above script to install Portainer doesn't work, as the `portainer/portainer-
 
 You can find more tutorials and useful information in our [GitHub Docs](https://github.com/pi-hosted/pi-hosted/blob/master/docs/DocumentList.md) folder.
 
+### Drivers
+Blacklisted drivers: iwlwifi
+
+Used: TP-Link AX1750 driver ([rtw89 sources](https://github.com/morrownr/rtw89))
+
 ### Included Scripts
 
 Install, Update, Pre-Install and extra scripts can be found in our [GitHub Tools](https://github.com/pi-hosted/pi-hosted/blob/master/tools) folder.
