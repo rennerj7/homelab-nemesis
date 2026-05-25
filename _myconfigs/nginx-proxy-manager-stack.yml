@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'   # Public HTTP
+      - '81:81'   # Admin UI
+      - '443:443' # Public HTTPS
+    volumes:
+      - /portainer/Files/AppData/Config/Nginx/data:/data
+      - /portainer/Files/AppData/Config/Nginx/letsencrypt:/etc/letsencrypt
+    networks:
+      - nginx_nemesis_brigded
+
+networks:
+  nginx_nemesis_brigded:
+    external: true
