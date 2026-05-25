@@ -1,0 +1,21 @@
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex-server
+    networks:
+      - nginx_nemesis_bridged
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /portainer/Files/AppData/Config/Plex:/config
+      - /media/Seagate_6TB/jellyfin_media/Shows:/tv
+      - /media/Seagate_6TB/jellyfin_media/Movies:/movies
+    restart: unless-stopped
+
+networks:
+  nginx_nemesis_brigded:
+    external: true
